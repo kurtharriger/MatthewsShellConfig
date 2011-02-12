@@ -111,11 +111,9 @@ prompt_wunjo_setup() {
 
 	local p_date p_line p_rc
 
-#	p_date="$pc[date]%D{%Y-%m-%d} $pc[time]%D{%T}$pc[reset]"
-	p_date="$pc[time]%D{%T}$pc[reset]"
+	p_date="$pc[date]%D{%Y-%m-%d} $pc[time]%D{%T}$pc[reset]"
 
-#	p_line="$pc[line]%y$pc[reset]"
-	p_line=""
+	p_line="$pc[line]%y$pc[reset]"
 
 	PROMPT=
 	if [ $verbose ]; then
@@ -135,7 +133,7 @@ prompt_wunjo_setup() {
 	if [ $verbose ]; then
 		RPROMPT+="$p_date "
 	fi
-#	RPROMPT+="$pc[user]%n$pc[reset]"
+	RPROMPT+="$pc[user]%n$pc[reset]"
 	RPROMPT+=""
 	RPROMPT+=" $p_line"
 
