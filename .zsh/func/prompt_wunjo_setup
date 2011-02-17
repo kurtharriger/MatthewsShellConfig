@@ -93,10 +93,10 @@ prompt_wunjo_setup() {
 	pc[punc]='red'
 	pc[line]='magenta'
 	pc[hist]='green'
-	pc[path]='red'
+	pc[path]='Cyan'
 	pc[shortpath]='default'
 	pc[rc]='red'
-	pc[scm_branch]='Green'
+	pc[scm_branch]='Cyan'
 	pc[scm_commitid]='Blue'
 	pc[scm_status_dirty]='Red'
 	pc[scm_status_staged]='Green'
@@ -111,20 +111,26 @@ prompt_wunjo_setup() {
 
 	local p_date p_line p_rc
 
-	p_date="$pc[path]$PWD"                            #Just the current working directory
+	p_date="%1~ \$(prompt_wunjo_scm_status) \$(prompt_wunjo_scm_branch)$pc[reset]"
 
-	p_line="$pc[reset]"                               #Pruned off the terminal name (e.g. ttys000)
+	p_line=""
 
 	PROMPT=
 	if [ $verbose ]; then
+		PROMPT+=" "
 	fi
-	PROMPT+="\$(prompt_wunjo_scm_status)"
-	PROMPT+="\$(prompt_wunjo_scm_branch) $pc[date]$ "
+#	PROMPT+="$pc[path]%(2~.%~.%/)$pc[reset]"
+#	PROMPT+="\$(prompt_wunjo_scm_status)"
+#	PROMPT+="%(?.. $pc[rc]exited %1v$pc[reset])"
+#	PROMPT+="
+#"
+	PROMPT+="$pc[#]%#$pc[reset] "
 
 	RPROMPT=
 	if [ $verbose ]; then
 		RPROMPT+="$p_date "
 	fi
+	RPROMPT+="$pc[reset]"
 	RPROMPT+=""
 	RPROMPT+=" $p_line"
 
@@ -182,7 +188,7 @@ prompt_wunjo_scm_status() {
 			commits+="on $mess"
 		fi
 	elif [ -n "$gitcommit" ]; then
-		commits+="$pc[scm_branch]$head$pc[punc]($pc[scm_commitid]$gitcommit$pc[punc])$pc[reset]"      #Removing the word ON
+		commits+="on $pc[scm_branch]$head$pc[punc]($pc[scm_commitid]$gitcommit$pc[punc])$pc[reset]"
 		local track_merge=$(zgit_tracking_merge)
 		if [ -n "$track_merge" ]; then
 			if git rev-parse --verify -q $track_merge >/dev/null; then
@@ -253,7 +259,7 @@ prompt_wunjo_scm_branch() {
 	local -A pc
 	pc=(${(kv)wunjo_prompt_colors})
 
-	echo -n "$pc[punc]"                               #The pc[punc] color. #Don't need the branch name duplicated
+	echo -n "$pc[punc]"
 
 	if zgit_inworktree; then
 		if ! zgit_isindexclean; then
@@ -278,6 +284,7 @@ prompt_wunjo_scm_branch() {
 		fi
 	fi
 
+	echo $pc[reset]
 }
 
 prompt_wunjo_setup "$@"
