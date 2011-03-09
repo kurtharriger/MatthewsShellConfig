@@ -1,49 +1,12 @@
 #Set up the path, add frameworks to the path
-export PATH=$PATH:./:~/scripts
 
-#Add dev frameworks
-export PATH=$PATH:$ANT_HOME/bin
-export PATH=$PATH:$M2_HOME/bin
-export PATH=$PATH:$GROOVY_HOME/bin
-export PATH=$PATH:$GRAILS_HOME/bin
-export PATH=$PATH:$NEXUS_HOME/bin/jsw/macosx-universal-32
-export PATH=$PATH:$JMETER_HOME/bin
-export PATH=$PATH:$JRUBY_HOME/bin
-export PATH=$PATH:$SOAPUI_HOME/bin
-export PATH=$PATH:$APPENGINE_HOME/bin
+export PATH=~/bin:~/scripts:$PATH
 
-# Hadoop
-export PATH=$PATH:/Applications/Dev/hadoop-family/hadoop-0.20.1/bin
-export PATH=$PATH:/Applications/Dev/hadoop-family/pig-0.5.0/bin
-export PATH=$PATH:/Applications/Dev/hadoop-family/avro-1.2.0/bin
-export PATH=$PATH:/Applications/Dev/hadoop-family/chukwa-0.3.0/bin
-export PATH=$PATH:/Applications/Dev/hadoop-family/hbase-0.20.2/bin
-export PATH=$PATH:/Applications/Dev/hadoop-family/hive-0.4.1-bin/bin
-export PATH=$PATH:/Applications/Dev/hadoop-family/zookeeper-3.2.2/bin
-
-# Dev
-export PATH=$PATH:/Applications/Dev/apache-tomcat/bin
-export PATH=$PATH:$EC2_HOME/bin
-export PATH=$PATH:/Applications/Dev/sonar/bin/macosx-universal-64
-export PATH=$PATH:/Applications/Dev/Bamboo
-export PATH=$PATH:/Applications/Dev/mvnsh/bin
-export PATH=$PATH:/Applications/Dev/pmaven/bin
-export PATH=$PATH:/Library/PostgreSQL/8.4/bin
-export PATH=/Applications/Dev/btrace/bin:$PATH
-export PATH=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Commands:$PATH
-export PATH=~/.gem/ruby/1.8/bin:$PATH
-export PATH=$PATH:~/.cljr/bin/
-
-#Haskell
-export PATH=$PATH:~/.cabal/bin/
-
-#MacPorts
-export PATH=/opt/local/bin:$PATH
-export PATH=/opt/local/sbin:$PATH
-export MANPATH=/opt/local/share/man:$MANPATH
-
-#Brew
+#Homebrew
 export PATH=/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
 
-#Git Bookmarking
-export PATH=~/Documents/Code/Code_and_Docs/Git/gitmarks_git:$PATH
+
+# export PATH=$PATH:./
+
+
