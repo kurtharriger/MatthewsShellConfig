@@ -1,0 +1,4 @@
+rsync -ar --update --files-from=sync-file-list ~/ .
+rsync -ar --update --files-from=sync-file-list . ~/
+
+

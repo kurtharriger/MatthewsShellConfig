@@ -1,0 +1,16 @@
+.bash_profile
+.bash_gitprompt
+.bashrc
+.profile
+.shellaliases
+.shellpaths
+.shellvars
+.zprofile
+.zsh
+.zsh/func
+.zsh/func/prompt_wunjo_setup
+.zsh/func/prompt_wunjo_setup.orig
+.zshenv
+.zshrc
+scripts/
+
