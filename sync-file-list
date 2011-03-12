@@ -7,10 +7,8 @@
 .shellvars
 .zprofile
 .zsh
-.zsh/func
-.zsh/func/prompt_wunjo_setup
-.zsh/func/prompt_wunjo_setup.orig
 .zshenv
 .zshrc
+.zsh/
 scripts/
 
