@@ -1,11 +1,12 @@
 #Set up the path, add frameworks to the path
 
-export PATH=~/bin:~/scripts:$PATH
+export PATH=$M2_HOME/bin:$PATH
 
 #Homebrew
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 
+export PATH=~/bin:~/scripts:$PATH
 
 # export PATH=$PATH:./
 
