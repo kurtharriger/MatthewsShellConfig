@@ -1,4 +1,9 @@
-rsync -ar --update --files-from=sync-file-list ~/ .
+
+for f in $(cat sync-file-list)
+do
+  [ -f ~/$f ] && rsync -ar --update ~/$f .
+done
+
 rsync -ar --update --files-from=sync-file-list . ~/
 
 
