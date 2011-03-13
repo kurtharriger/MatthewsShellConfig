@@ -9,5 +9,5 @@
 .zsh
 .zshenv
 .zshrc
-.zsh
-scripts
+.zsh/
+scripts/
