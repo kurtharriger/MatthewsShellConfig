@@ -46,3 +46,8 @@ alias files.usage.user='sudo fs_usage -e -f filesystem|grep -v CACHE_HIT|grep -v
 # -p Postpend slash to folders
 alias ls='ls -G -h -p '
 alias ll='ls -l -G -h -p '
+
+alias gh='cd ~/CQ5/code/pilot'
+alias vh='cd ~/CQ5/code/pilot/content/jcr_root'
+function v() { pushd ~/CQ5/code/pilot/content/jcr_root >/dev/null; vlt $* ; popd >/dev/null; }
+function g() { pushd ~/CQ5/code/pilot/ >/dev/null; git $*; popd >/dev/null; }

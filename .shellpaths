@@ -1,6 +1,12 @@
 #Set up the path, add frameworks to the path
 
 export PATH=$M2_HOME/bin:$PATH
+for bin in $(find ~/local -name "bin" -type d -print) 
+do 
+   PATH=$bin:$PATH
+done
+
+PATH=~/bin:~/scripts:$PATH
 
 #Homebrew
 export PATH=/usr/local/sbin:$PATH
