@@ -6,8 +6,8 @@
 .shellpaths
 .shellvars
 .zprofile
-.zsh
 .zshenv
 .zshrc
 .zsh/
 scripts/
+.zsh/func/

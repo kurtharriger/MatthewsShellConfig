@@ -1,5 +1,5 @@
 
-opts="-ar --update"
+opts="-ar --update -v"
 for f in $(cat sync-file-list)
 do
   [ -f ~/$f -o -d ~/$f ] && rsync $opts ~/$f ./$f
